@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
@@ -22,10 +23,11 @@ import { PagesModule } from 'app/pages/pages.module';
     PagesModule,
     OrderModule,
     HttpModule,
+    SharedModule,
     RouterModule
   ],
   providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
-  exports: [PagesModule],
+  exports: [PagesModule, SharedModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

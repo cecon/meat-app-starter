@@ -10,7 +10,7 @@ import { OrderComponent } from 'app/pages/order/order.component';
 export const ROUTES: Routes = [
     {path: '', component: HomeComponent},
     {path: 'about', component: AboutComponent},
-    {path: 'order', component: OrderComponent},
+    {path: 'order', loadChildren: 'app/pages/order/order.module#OrderModule'},
     {path: 'restaurants', component: RestaurantsComponent},
     {path: 'restaurants/:id', component: DetailComponent, children: [
         {path: '', redirectTo: 'menu', pathMatch: 'full'},
